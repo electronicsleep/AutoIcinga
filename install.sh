@@ -13,3 +13,7 @@ vim-addon-manager -w install icinga2
 icinga2 feature enable ido-mysql
 
 icinga2 feature enable command
+
+apt install icingaweb2 icingacli
+
+icingacli setup token create
