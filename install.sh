@@ -17,3 +17,5 @@ icinga2 feature enable command
 apt install icingaweb2 icingacli
 
 icingacli setup token create
+
+icinga2 api setup
