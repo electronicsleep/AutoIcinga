@@ -1,5 +1,9 @@
 #!/bin/bash
-HOST=localhost
+#Rough notes for installing Grafana / Prometheus
+
+#HOST=localhost
+#USER=
+
 # http://docs.grafana.org/installation/debian/
 
 wget https://s3-us-west-2.amazonaws.com/grafana-releases/release/grafana_5.0.4_amd64.deb
@@ -12,62 +16,64 @@ systemctl enable grafana-server.service
 
 #http://$HOST:3000/
 
-L/P admin
+#L/P admin
 
-* login, add data source
+#* login, add data source
 
 ### PROM
 
-mkdir /home/chris/Prom
+mkdir /home/$USER/Prom
+
+cd /home/$USER/Prom
 
 wget https://github.com/prometheus/prometheus/releases/download/v2.2.1/prometheus-2.2.1.linux-amd64.tar.gz
 
 tar xvfz prom*
 
-prometheus-2.2.1.linux-amd64/
+#update prometheus.yml
 
 wget https://github.com/prometheus/node_exporter/releases/download/v0.15.2/node_exporter-0.15.2.linux-amd64.tar.gz
 
-tar xvfz node_*
+#tar xvfz node_*
 
-vim /home/chris/start-prom.sh
+#vim /home/$USER/start-prom.sh
 #!/bin/bash
 #cd ~/Prom/prometheus-*
 #nohup ./prometheus > prometheus.log 2>&1 &
 #cd ~/Prom/node_*
 #nohup ./node_exporter > node_exporter.log 2>&1 &
 
+
 # PROM
-http://$HOST:9090/targets
+#http://$HOST:9090/targets
 # NODE EXPORTER
-http://$HOST:9100/metrics
+#http://$HOST:9100/metrics
 
 #### GRAFANA
 
-Data sources -> Prometheus
+#Data sources -> Prometheus
 
-URL: $HOST:9090
-Access: direct
+#URL: $HOST:9090
+#Access: direct
 
-- user set default dashboard to Servers
-
+#- user set default dashboard to Servers
 
 #### ADD GRAPHS
 
---> Servers
+#--> Servers
 
-CPU
-node_load1{job!="localhost"}
-node_load5{job!="localhost"}
-node_load15{job!="localhost"}
+#CPU
+#node_load1{job!="localhost"}
+#node_load5{job!="localhost"}
+#node_load15{job!="localhost"}
 
-Mem
-node_memory_MemFree{job!="localhost"}
-node_memory_MemTotal{job!="localhost"}
+#Mem
+#node_memory_MemFree{job!="localhost"}
+#node_memory_MemTotal{job!="localhost"}
 
-Net
-node_netstat_Tcp_ActiveOpens{job!="localhost"}
-http_requests_total{job!="localhost"}
+#Net
+#node_netstat_Tcp_ActiveOpens{job!="localhost"}
+#http_requests_total{job!="localhost"}
 
-Disk
-node_disk_io_now{job!="localhost"}
+#Disk
+#node_disk_io_now{job!="localhost"}
