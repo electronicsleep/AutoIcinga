@@ -1,8 +1,7 @@
-#!/bin/bash
-#Rough notes for installing Grafana / Prometheus
+# Rough notes for installing Grafana / Prometheus
 
-#HOST=localhost
-#USER=
+# HOST=localhost
+# USER=user
 
 # http://docs.grafana.org/installation/debian/
 
@@ -14,9 +13,9 @@ service grafana-server start
 
 systemctl enable grafana-server.service
 
-#http://$HOST:3000/
+# http://$HOST:3000/
 
-#L/P admin
+# Default L/P: admin
 
 #* login, add data source
 
@@ -30,11 +29,11 @@ wget https://github.com/prometheus/prometheus/releases/download/v2.2.1/prometheu
 
 tar xvfz prom*
 
-#update prometheus.yml
+# Update prometheus.yml
 
 wget https://github.com/prometheus/node_exporter/releases/download/v0.15.2/node_exporter-0.15.2.linux-amd64.tar.gz
 
-#tar xvfz node_*
+# tar xvfz node_*
 
 #vim /home/$USER/start-prom.sh
 #!/bin/bash
@@ -44,36 +43,36 @@ wget https://github.com/prometheus/node_exporter/releases/download/v0.15.2/node_
 #nohup ./node_exporter > node_exporter.log 2>&1 &
 
 
-# PROM
+# Prometheus
 #http://$HOST:9090/targets
-# NODE EXPORTER
+# Node Exporter
 #http://$HOST:9100/metrics
 
-#### GRAFANA
+### GRAFANA
 
-#Data sources -> Prometheus
+# Data sources -> Prometheus
 
-#URL: $HOST:9090
-#Access: direct
+# URL: $HOST:9090
+# Access: direct
 
-#- user set default dashboard to Servers
+# - user set default dashboard to Servers
 
-#### ADD GRAPHS
+### ADD GRAPHS
 
-#--> Servers
+# --> Servers
 
-#CPU
-#node_load1{job!="localhost"}
-#node_load5{job!="localhost"}
-#node_load15{job!="localhost"}
+# CPU
+# node_load1{job!="localhost"}
+# node_load5{job!="localhost"}
+# node_load15{job!="localhost"}
 
-#Mem
-#node_memory_MemFree{job!="localhost"}
-#node_memory_MemTotal{job!="localhost"}
+# Mem
+# node_memory_MemFree{job!="localhost"}
+# node_memory_MemTotal{job!="localhost"}
 
-#Net
-#node_netstat_Tcp_ActiveOpens{job!="localhost"}
-#http_requests_total{job!="localhost"}
+# Net
+# node_netstat_Tcp_ActiveOpens{job!="localhost"}
+# http_requests_total{job!="localhost"}
 
-#Disk
-#node_disk_io_now{job!="localhost"}
+# Disk
+# node_disk_io_now{job!="localhost"}
