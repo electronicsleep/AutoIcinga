@@ -1,5 +1,9 @@
 # AutoIcinga
 
+* Instructions tested on Debian 9
+
+* Quickstart info for Icinga
+
 * Tools to automate and make Icinga easier to manage and understand.
 
 * Simple system for Icinga checks and configuration.
