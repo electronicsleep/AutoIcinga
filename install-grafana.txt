@@ -75,8 +75,8 @@ nohup ./node_exporter
 # node_load15{job!="localhost"}
 
 # Mem
-# node_memory_MemFree{job!="localhost"}
-# node_memory_MemTotal{job!="localhost"}
+# node_memory_MemFree_bytes{job!="localhost"}
+# node_memory_MemTotal_bytes{job!="localhost"}
 
 # Net
 # node_netstat_Tcp_ActiveOpens{job!="localhost"}
