@@ -4,8 +4,9 @@ icinga2 object list --type service --name ping4
 
 
 /usr/share/icinga2/include/command-plugins.conf
-changed from 100 -> 400
-changed error from 200 -> 600
+
+vars.ping_wrta: changed from 100 -> 400
+vars.ping_crta: changed error from 200 -> 600
 
 
 
@@ -18,8 +19,8 @@ changed error from 200 -> 600
 
 ### PROCS THRESHOLD
 
-from 250
-from 400
+vars.procs_warning: changed from 250
+vars.procs_critical: changed from 400
 
 vars.procs_warning = 450
 vars.procs_critical = 800
@@ -35,4 +36,4 @@ vars.procs_critical = 800
 ### DISABLE APT ALERTS
 mv /etc/icinga2/conf.d/apt.conf /etc/icinga2/conf.d/apt.disabled
 
-service restart icinga2
+service icinga2 restart
