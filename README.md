@@ -1,8 +1,8 @@
 # AutoIcinga
 
-* Tools for Icinga Graphana Prometheus
+* Tools for Icinga, Grafana and Prometheus
 
-* Quickstart info for Icinga, Jenkins automation ideas
+* Quickstart info for Icinga, Jenkins automation tests and ideas
 
 * Notes on how to install graphing plugin with Icinga
 
