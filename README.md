@@ -1,14 +1,12 @@
 # AutoIcinga
 
-* Instructions tested on Debian 9
+* Tools for Icinga Graphana Prometheus
 
 * Quickstart info for Icinga
 
-* Tools to automate and make Icinga easier to manage and understand.
+* Notes on how to install graphing plugin with Icinga.
 
 * Simple system for Icinga checks and configuration.
-
-* Notes on how to install graphing plugin with Icinga.
 
 apt install dnsutils
 
