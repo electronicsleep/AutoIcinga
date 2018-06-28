@@ -2,11 +2,11 @@
 
 * Tools for Icinga Graphana Prometheus
 
-* Quickstart info for Icinga
+* Quickstart info for Icinga, Jenkins automation ideas
 
-* Notes on how to install graphing plugin with Icinga.
+* Notes on how to install graphing plugin with Icinga
 
-* Simple system for Icinga checks and configuration.
+* Simple system for Icinga checks and configuration
 
 apt install dnsutils
 
