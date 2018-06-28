@@ -69,13 +69,25 @@ do
  SEC=$(expr ${COMPARE} - ${EPOCH})
 
  DAYS=$(expr ${SEC} / 86400)
- if [ "$DAYS" -lt 30 ]; then
-  echo "Warning: Renew Cert $DAYS days left."
-  exit 1
- elif [ "$DAYS" -lt 20 ]; then
-  echo "Error: Renew Cert $DAYS days left."
-  exit 2
+ if [ "$DAYS" -lt 90 ]; then
+  MSG="Warning: Renew Cert $DAYS days left."
+  echo "$MSG"
+ elif [ "$DAYS" -lt 30 ]; then
+  MSG="Error: Renew Cert $DAYS days left."
+  echo "$MSG"
+  ERROR=yes
  else
   echo "Ok: $DAYS days left."
  fi
+
+ if [ "$ERROR" == "yes" ]; then
+ ERROR_LIST="$ERROR_LIST $HOST"
+ #ERROR_NUM=$(let $ERROR_NUM + 1)
+ fi
+
 done
+
+if [ ! -z "$ERROR_LIST" ]; then
+ echo "ERRORS: $ERROR_LIST"
+ exit 1
+fi
