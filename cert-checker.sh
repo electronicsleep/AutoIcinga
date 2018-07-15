@@ -70,14 +70,14 @@ do
 
  DAYS=$(expr ${SEC} / 86400)
  if [ "$DAYS" -lt 90 ]; then
-  MSG="Warning: Renew Cert $DAYS days left."
+  MSG="Warning: $HOST Renew Cert $DAYS days left."
   echo "$MSG"
  elif [ "$DAYS" -lt 30 ]; then
-  MSG="Error: Renew Cert $DAYS days left."
+  MSG="Error: $HOST Renew Cert $DAYS days left."
   echo "$MSG"
   ERROR=yes
  else
-  echo "Ok: $DAYS days left."
+  echo "Ok: $HOST $DAYS days left."
  fi
 
  if [ "$ERROR" == "yes" ]; then
