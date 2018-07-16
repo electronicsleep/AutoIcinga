@@ -8,7 +8,7 @@ apt-get update
 
 apt upgrade -y
 
-apt install net-tools curl wget vim -y
+apt install net-tools curl wget vim dnsutils -y
 
 apt install vim-icinga2 vim-addon-manager -y
 

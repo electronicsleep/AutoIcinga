@@ -8,8 +8,6 @@
 
 * Simple system for Icinga checks and configuration
 
-apt install dnsutils
-
 ### Modify the hosts config
 vim /etc/icinga2/conf.d/hosts.conf
 
