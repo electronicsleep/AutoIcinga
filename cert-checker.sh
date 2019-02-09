@@ -37,29 +37,29 @@ do
   COMPARE=$(date -j -f "%d %b %Y %T %Z" "$EXPIRY_DAY $EXPIRY_MONTH $EXPIRY_YEAR 00:00:00 PST" +"%s")
  else
   #Linux
-  if [ ${EXPIRY_MONTH} == "Jan" ]; then
+  if [ "${EXPIRY_MONTH}" == "Jan" ]; then
    EXPIRY_MONTH=01
-  elif [ ${EXPIRY_MONTH} == "Feb" ]; then
+  elif [ "${EXPIRY_MONTH}" == "Feb" ]; then
    EXPIRY_MONTH=02
-  elif [ ${EXPIRY_MONTH} == "Mar" ]; then
+  elif [ "${EXPIRY_MONTH}" == "Mar" ]; then
    EXPIRY_MONTH=03
-  elif [ ${EXPIRY_MONTH} == "Apr" ]; then
+  elif [ "${EXPIRY_MONTH}" == "Apr" ]; then
    EXPIRY_MONTH=04
-  elif [ ${EXPIRY_MONTH} == "May" ]; then
+  elif [ "${EXPIRY_MONTH}" == "May" ]; then
    EXPIRY_MONTH=05
-  elif [ ${EXPIRY_MONTH} == "Jun" ]; then
+  elif [ "${EXPIRY_MONTH}" == "Jun" ]; then
    EXPIRY_MONTH=06
-  elif [ ${EXPIRY_MONTH} == "Jul" ]; then
+  elif [ "${EXPIRY_MONTH}" == "Jul" ]; then
    EXPIRY_MONTH=07
-  elif [ ${EXPIRY_MONTH} == "Aug" ]; then
+  elif [ "${EXPIRY_MONTH}" == "Aug" ]; then
    EXPIRY_MONTH=08
-  elif [ ${EXPIRY_MONTH} == "Sep" ]; then
+  elif [ "${EXPIRY_MONTH}" == "Sep" ]; then
    EXPIRY_MONTH=09
-  elif [ ${EXPIRY_MONTH} == "Oct" ]; then
+  elif [ "${EXPIRY_MONTH}" == "Oct" ]; then
    EXPIRY_MONTH=10
-  elif [ ${EXPIRY_MONTH} == "Nov" ]; then
+  elif [ "${EXPIRY_MONTH}" == "Nov" ]; then
    EXPIRY_MONTH=11
-  elif [ ${EXPIRY_MONTH} == "Dec" ]; then
+  elif [ "${EXPIRY_MONTH}" == "Dec" ]; then
    EXPIRY_MONTH=12
   fi
 
@@ -69,10 +69,10 @@ do
  SEC=$(expr ${COMPARE} - ${EPOCH})
 
  DAYS=$(expr ${SEC} / 86400)
- if [ "$DAYS" -lt 90 ]; then
+ if [ "$DAYS" -lt 30 ]; then
   MSG="Warning: $HOST Renew Cert $DAYS days left."
   echo "$MSG"
- elif [ "$DAYS" -lt 30 ]; then
+ elif [ "$DAYS" -lt 14 ]; then
   MSG="Error: $HOST Renew Cert $DAYS days left."
   echo "$MSG"
   ERROR=yes
