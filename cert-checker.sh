@@ -69,10 +69,10 @@ do
  SEC=$(expr ${COMPARE} - ${EPOCH})
 
  DAYS=$(expr ${SEC} / 86400)
- if [ "$DAYS" -lt 30 ]; then
+ if [ "$DAYS" -lt 10 ]; then
   MSG="Warning: $HOST Renew Cert $DAYS days left."
   echo "$MSG"
- elif [ "$DAYS" -lt 14 ]; then
+ elif [ "$DAYS" -lt 5 ]; then
   MSG="Error: $HOST Renew Cert $DAYS days left."
   echo "$MSG"
   ERROR=yes
