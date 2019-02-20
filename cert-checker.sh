@@ -12,6 +12,11 @@ if [ -z "$HOSTS" ]; then
  exit 1
 fi
 
+if ! [ -x "$(command -v dig)" ]; then
+  echo 'Error: dig is not installed.' >&2
+  exit 1
+fi
+
 EPOCH=$(date "+%s")
 DAY=$(date "+%d")
 MONTH=$(date "+%m")
