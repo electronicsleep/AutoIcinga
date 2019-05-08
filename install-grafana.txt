@@ -65,10 +65,7 @@ nohup ./node_exporter
 
 # - user set default dashboard to Servers
 
-### ADD GRAPHS
-
-# --> Servers
-
+### ADD GRAPHS METRICS
 # CPU
 # node_load1{job!="localhost"}
 # node_load5{job!="localhost"}
@@ -77,6 +74,7 @@ nohup ./node_exporter
 # Mem
 # node_memory_MemFree_bytes{job!="localhost"}
 # node_memory_MemTotal_bytes{job!="localhost"}
+# process_resident_memory_bytes{job!="localhost"}
 
 # Net
 # node_netstat_Tcp_ActiveOpens{job!="localhost"}
