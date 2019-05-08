@@ -81,6 +81,7 @@ nohup ./node_exporter
 # Net
 # node_netstat_Tcp_ActiveOpens{job!="localhost"}
 # http_requests_total{job!="localhost"}
+# node_netstat_Tcp_CurrEstab{job!="localhost"}
 
 # Disk
 # node_disk_io_now{job!="localhost"}
