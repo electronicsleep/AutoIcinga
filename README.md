@@ -1,8 +1,8 @@
 # AutoIcinga
 
-* Tools for Icinga, Grafana and Prometheus
+* Tools for Icinga, Graphite, Grafana and Prometheus
 
-* Quickstart info for Icinga, Jenkins automation tests and ideas
+* Quickstart info for Icinga, automation tests and ideas
 
 * Notes on how to install graphing plugin with Icinga
 
@@ -15,7 +15,7 @@ vim /etc/icinga2/conf.d/hosts.conf
 vim /usr/share/icinga2/include/command-plugins.conf
 
 ### Validate config
-icinga2 daemon -C
+icinga2 daemon -C && service icinga2 restart
 
 ### See AutoNagios
 https://github.com/electronicsleep/AutoNagios
